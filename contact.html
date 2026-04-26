@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>KnotCraft Eatery · Contact & Location</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Accessibility Hub (same as other pages) -->
+    <div class="accessibility-hub" id="accessibilityHub">
+        <button id="highContrastToggle" aria-label="High contrast mode">🌓 Contrast</button>
+        <button id="dyslexiaToggle" aria-label="Dyslexia friendly font">📖 Dyslexia</button>
+        <button id="announceMode" aria-label="Screen reader friendly announcements">🔊 Announce</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-knot"></i>
+                <span class="logo-text">KnotCraft Eatery</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">Our Knot</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="reservations.html" class="nav-link">Reserve</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Weave a Thread With Us</h1>
+            <p>Reach out for questions, events, or simply to share your story‑knot.</p>
+        </div>
+    </section>
+
+    <!-- Contact Grid: Info + Message Form -->
+    <section class="contact-page-section">
+        <div class="container">
+            <div class="contact-grid-full">
+                <!-- Left side: Location & details -->
+                <div class="contact-info-block">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt contact-icon-big"></i>
+                        <h3>Visit Our Knot</h3>
+                        <p>Gasabo District, Kagugu Sector<br>Vision City, Kigali – Rwanda</p>
+                        <hr>
+                        <i class="fas fa-clock"></i>
+                        <h3>Hours</h3>
+                        <p>Monday – Friday: 11:00 AM – 11:00 PM<br>Saturday – Sunday: 10:00 AM – 12:00 AM</p>
+                        <hr>
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Call Us</h3>
+                        <p>+250 781 276 136<br>+250 790 111 222</p>
+                        <hr>
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>hello@knotcrafteatery.com<br>reservations@knotcrafteatery.com</p>
+                    </div>
+                    <div class="social-links-vertical">
+                        <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right side: Message form (not reservation) -->
+                <div class="contact-form-block">
+                    <h2>Send Us a Thread</h2>
+                    <p>Questions, feedback, or collaboration — we’ll reply within 24h.</p>
+                    <form id="contactMessageForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full name *</label>
+                                <input type="text" id="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email *</label>
+                                <input type="email" id="contactEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" placeholder="e.g., Private event, feedback, story‑knot">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Your message *</label>
+                            <textarea id="contactMessage" rows="5" required placeholder="Tell us anything — a memory, a question, or a knot you’d like us to tie..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div id="contactFormFeedback" class="form-feedback" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Map placeholder (accessible) -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Our Knot</h2>
+            <div class="map-placeholder" aria-label="Map showing location near Vision City, Gasabo">
+                <i class="fas fa-map-pin"></i> Vision City, Kigali — exact directions upon booking
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-knot"></i>
+                    <span>KnotCraft Eatery</span>
+                </div>
+                <p class="footer-text">© 2026 · Where every knot tells a story</p>
+                <p class="footer-tagline">Accessible. Warm. Unforgettable.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</html>

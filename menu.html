@@ -1,0 +1,61 @@
+<!-- full menu page, using same structure as Majestic but split -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>KnotCraft Eatery · Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+      <div class="accessibility-hub" id="accessibilityHub">
+        <button id="highContrastToggle" aria-label="High contrast mode">🌓 Contrast</button>
+        <button id="dyslexiaToggle" aria-label="Dyslexia friendly font">📖 Dyslexia</button>
+        <button id="announceMode" aria-label="Screen reader friendly announcements">🔊 Announce</button>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-knot"></i>
+                <span class="logo-text">KnotCraft Eatery</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">Our Knot</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="reservations.html" class="nav-link">Reserve</a></li>
+            </ul>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <!-- nav + accessibility hub -->
+    <section class="menu-section">
+        <div class="container">
+            <h1 class="section-title">Our Menu</h1>
+            <div class="menu-category">
+                <h2 class="category-title">Signature Knots</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header"><h4>Truffle Risotto Knot</h4><span class="price">3,200 RWF</span></div>
+                        <p class="item-description">Creamy arborio, black truffle, parmesan — tied with a basil thread.</p>
+                        <div class="item-tags"><span class="tag">Vegetarian</span><span class="tag">Knot of the Day</span></div>
+                    </div>
+                    <!-- reuse other dishes from Majestic, rename creatively -->
+                </div>
+            </div>
+            <!-- repeat appetizers, desserts -->
+        </div>
+    </section>
+  <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><i class="fas fa-knot"></i><span>KnotCraft Eatery</span></div>
+                <p class="footer-text">© 2026 · Where every knot tells a story</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

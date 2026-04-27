@@ -1,61 +1,165 @@
-<!-- full menu page, using same structure as Majestic but split -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>KnotCraft Eatery · Home</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KnotCraft Eatery · Menu</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-      <div class="accessibility-hub" id="accessibilityHub">
-        <button id="highContrastToggle" aria-label="High contrast mode">🌓 Contrast</button>
-        <button id="dyslexiaToggle" aria-label="Dyslexia friendly font">📖 Dyslexia</button>
-        <button id="announceMode" aria-label="Screen reader friendly announcements">🔊 Announce</button>
+
+    <!-- Accessibility -->
+    <div class="accessibility-hub" id="accessibilityHub">
+        <button id="highContrastToggle">🌓 Contrast</button>
+        <button id="dyslexiaToggle">📖 Dyslexia</button>
+        <button id="announceMode">🔊 Announce</button>
+    </div>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+
+    <div class="logo">
+      <i class="fas fa-knot"></i>
+      <span class="logo-text">KnotCraft Eatery</span>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-knot"></i>
-                <span class="logo-text">KnotCraft Eatery</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">Our Knot</a></li>
-                <li><a href="menu.html" class="nav-link">Menu</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="reservations.html" class="nav-link">Reserve</a></li>
-            </ul>
-            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
-    <!-- nav + accessibility hub -->
-    <section class="menu-section">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">Our Knot</a></li>
+      <li><a href="menu.html" class="nav-link">Menu</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="reservations.html" class="nav-link">Reserve</a></li>
+    </ul>
+
+    <div class="mobile-menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+  </div>
+</nav>
+
+    <!-- HEADER -->
+    <header class="page-header">
         <div class="container">
-            <h1 class="section-title">Our Menu</h1>
-            <div class="menu-category">
-                <h2 class="category-title">Signature Knots</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="item-header"><h4>Truffle Risotto Knot</h4><span class="price">3,200 RWF</span></div>
-                        <p class="item-description">Creamy arborio, black truffle, parmesan — tied with a basil thread.</p>
-                        <div class="item-tags"><span class="tag">Vegetarian</span><span class="tag">Knot of the Day</span></div>
-                    </div>
-                    <!-- reuse other dishes from Majestic, rename creatively -->
-                </div>
-            </div>
-            <!-- repeat appetizers, desserts -->
+            <h1>Our Menu</h1>
+            <p>Crafted dishes woven with flavor, care, and story.</p>
         </div>
-    </section>
-  <footer class="footer">
+    </header>
+
+    <!-- MAIN MENU -->
+    <main class="menu-section">
+
+        <div class="container">
+
+            <!-- SIGNATURE -->
+            <section class="menu-category">
+                <h2 class="category-title">⭐ Signature Knots</h2>
+
+                <div class="menu-grid">
+
+                    <article class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Risotto Knot</h4>
+                            <span class="price">3,200 RWF</span>
+                        </div>
+                        <p class="item-description">
+                            Creamy arborio rice, black truffle, parmesan, basil thread finish.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Vegetarian</span>
+                            <span class="tag">Popular</span>
+                        </div>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-header">
+                            <h4>KnotCraft Grilled Chicken</h4>
+                            <span class="price">4,500 RWF</span>
+                        </div>
+                        <p class="item-description">
+                            Herb-marinated chicken grilled over charcoal with honey glaze.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Chef Choice</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- STARTERS -->
+            <section class="menu-category">
+                <h2 class="category-title">🥗 Starters</h2>
+
+                <div class="menu-grid">
+
+                    <article class="menu-item">
+                        <div class="item-header">
+                            <h4>Garden Knot Salad</h4>
+                            <span class="price">2,000 RWF</span>
+                        </div>
+                        <p class="item-description">
+                            Fresh greens, citrus dressing, crunchy seeds blend.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Light</span>
+                            <span class="tag">Healthy</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- DESSERTS -->
+            <section class="menu-category">
+                <h2 class="category-title">🍰 Desserts</h2>
+
+                <div class="menu-grid">
+
+                    <article class="menu-item">
+                        <div class="item-header">
+                            <h4>Chocolate Knot Lava Cake</h4>
+                            <span class="price">2,800 RWF</span>
+                        </div>
+                        <p class="item-description">
+                            Warm chocolate cake with molten center and vanilla ice cream.
+                        </p>
+                        <div class="item-tags">
+                            <span class="tag">Sweet</span>
+                            <span class="tag">Best Seller</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><i class="fas fa-knot"></i><span>KnotCraft Eatery</span></div>
-                <p class="footer-text">© 2026 · Where every knot tells a story</p>
+
+                <div class="footer-logo">
+                    <i class="fas fa-knot"></i>
+                    <span>KnotCraft Eatery</span>
+                </div>
+
+                <p class="footer-text">
+                    © 2026 · Where every knot tells a story
+                </p>
+
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

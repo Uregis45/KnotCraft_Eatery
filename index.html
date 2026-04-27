@@ -2,89 +2,152 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <!-- Better mobile + SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KnotCraft Eatery in Kigali — handcrafted meals, accessible dining, and unforgettable food experiences.">
+
     <title>KnotCraft Eatery · Home</title>
+
+    <!-- Fonts (modern look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+
+    <!-- Accessibility Hub -->
     <div class="accessibility-hub" id="accessibilityHub">
-        <button id="highContrastToggle" aria-label="High contrast mode">🌓 Contrast</button>
-        <button id="dyslexiaToggle" aria-label="Dyslexia friendly font">📖 Dyslexia</button>
-        <button id="announceMode" aria-label="Screen reader friendly announcements">🔊 Announce</button>
+        <button id="highContrastToggle" aria-label="Enable high contrast mode">🌓 Contrast</button>
+        <button id="dyslexiaToggle" aria-label="Enable dyslexia friendly font">📖 Dyslexia</button>
+        <button id="announceMode" aria-label="Enable screen reader announcements">🔊 Announce</button>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-knot"></i>
-                <span class="logo-text">KnotCraft Eatery</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">Our Knot</a></li>
-                <li><a href="menu.html" class="nav-link">Menu</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="reservations.html" class="nav-link">Reserve</a></li>
-            </ul>
-            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
+  <nav class="navbar" id="navbar">
+  <div class="nav-container">
 
-    <section class="hero">
+    <div class="logo">
+      <i class="fas fa-knot"></i>
+      <span class="logo-text">KnotCraft Eatery</span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">Our Knot</a></li>
+      <li><a href="menu.html" class="nav-link">Menu</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="reservations.html" class="nav-link">Reserve</a></li>
+    </ul>
+
+    <div class="mobile-menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+  </div>
+</nav>
+
+    <!-- HERO -->
+    <header class="hero">
+
         <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <h1 class="hero-title">KnotCraft</h1>
-            <p class="hero-subtitle">Where every meal ties a memory</p>
-            <p class="hero-description">Handcrafted flavors, woven with care. Accessible elegance for every guest.</p>
+
+            <p class="hero-subtitle">
+                Where every meal ties a memory
+            </p>
+
+            <p class="hero-description">
+                Handcrafted flavors, woven with care — designed for comfort, accessibility, and unforgettable moments.
+            </p>
+
             <div class="hero-buttons">
-                <a href="reservations.html" class="btn-primary">Reserve a Knot</a>
-                <a href="menu.html" class="btn-secondary">Explore Menu</a>
+                <a href="reservations.html" class="btn-primary">Reserve a Table</a>
+                <a href="menu.html" class="btn-secondary">View Menu</a>
             </div>
         </div>
+
+        <!-- Kitchen Pulse (nice idea, kept it) -->
         <div class="pulse-knot">
             <div class="knot-tension" id="tensionMeter">
                 <span>🍽️ Kitchen Pulse</span>
-                <div class="tension-bar"><div class="tension-fill"></div></div>
-                <span id="tensionText">Calm weave</span>
+                <div class="tension-bar">
+                    <div class="tension-fill"></div>
+                </div>
+                <span id="tensionText">Calm service</span>
             </div>
         </div>
-    </section>
 
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">The KnotCraft Way</h2>
-                <p class="section-subtitle">Tie your experience to something real</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-hand-peace feature-icon"></i>
-                    <h3>Accessibility Woven In</h3>
-                    <p>Mood threads, high contrast, dyslexia font — designed for every body.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-book-open feature-icon"></i>
-                    <h3>Guest Story‑Knots</h3>
-                    <p>Leave a sensory memory: a sound, a smell, a laugh. We keep it.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line feature-icon"></i>
-                    <h3>Live Kitchen Pulse</h3>
-                    <p>See the restaurant’s rhythm before you arrive.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </header>
 
+    <!-- FEATURES -->
+    <main>
+
+        <section class="features">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2 class="section-title">The KnotCraft Experience</h2>
+                    <p class="section-subtitle">More than food — it’s connection</p>
+                </div>
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+                        <i class="fas fa-hand-peace feature-icon"></i>
+                        <h3>Accessible Dining</h3>
+                        <p>Inclusive design with high contrast, dyslexia support, and thoughtful service.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <i class="fas fa-book-open feature-icon"></i>
+                        <h3>Story-Knots</h3>
+                        <p>Every guest leaves a memory — a story woven into our experience.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3>Live Kitchen Flow</h3>
+                        <p>Stay informed about our restaurant’s rhythm before you arrive.</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><i class="fas fa-knot"></i><span>KnotCraft Eatery</span></div>
-                <p class="footer-text">© 2026 · Where every knot tells a story</p>
+
+                <div class="footer-logo">
+                    <i class="fas fa-knot"></i>
+                    <span>KnotCraft Eatery</span>
+                </div>
+
+                <p class="footer-text">
+                    © 2026 KnotCraft Eatery · Kigali, Rwanda
+                </p>
+
+                <p class="footer-tagline">
+                    Crafted with care. Served with meaning.
+                </p>
+
             </div>
         </div>
     </footer>
+
+    <!-- JS -->
     <script src="script.js"></script>
+
 </body>
 </html>

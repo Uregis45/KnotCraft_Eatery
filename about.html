@@ -2,70 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Mobile + SEO -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the story behind KnotCraft Eatery — a restaurant built on accessibility, human connection, and handcrafted food.">
+
     <title>KnotCraft Eatery · Our Knot</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-      <div class="accessibility-hub" id="accessibilityHub">
-        <button id="highContrastToggle" aria-label="High contrast mode">🌓 Contrast</button>
-        <button id="dyslexiaToggle" aria-label="Dyslexia friendly font">📖 Dyslexia</button>
-        <button id="announceMode" aria-label="Screen reader friendly announcements">🔊 Announce</button>
+
+    <!-- Accessibility Hub -->
+    <div class="accessibility-hub" id="accessibilityHub">
+        <button id="highContrastToggle" aria-label="Enable high contrast mode">🌓 Contrast</button>
+        <button id="dyslexiaToggle" aria-label="Enable dyslexia friendly font">📖 Dyslexia</button>
+        <button id="announceMode" aria-label="Enable screen reader announcements">🔊 Announce</button>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-knot"></i>
-                <span class="logo-text">KnotCraft Eatery</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">Our Knot</a></li>
-                <li><a href="menu.html" class="nav-link">Menu</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="reservations.html" class="nav-link">Reserve</a></li>
-            </ul>
-            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
+ <nav class="navbar" id="navbar">
+  <div class="nav-container">
 
-    <div class="accessibility-hub">...</div> <!-- same as index -->
-    <nav class="navbar">...</nav> <!-- same -->
+    <div class="logo">
+      <i class="fas fa-knot"></i>
+      <span class="logo-text">KnotCraft Eatery</span>
+    </div>
 
-    <section class="page-header">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">Our Knot</a></li>
+      <li><a href="menu.html" class="nav-link">Menu</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="reservations.html" class="nav-link">Reserve</a></li>
+    </ul>
+
+    <div class="mobile-menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+  </div>
+</nav>
+
+    <!-- HEADER -->
+    <header class="page-header">
         <div class="container">
             <h1>The Knot We Weave</h1>
             <p>Food, accessibility, and human stories — tied together.</p>
         </div>
-    </section>
+    </header>
 
-    <section class="about-story">
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-text">
-                    <h2>More than a restaurant</h2>
-                    <p>KnotCraft was born from a simple belief: a meal should never be a struggle. Our founder, after years in fine dining, noticed that guests with disabilities were often forgotten. So we built a place where every table is a knot — a connection — and every server knows your “mood thread” before you sit down.</p>
-                    <p>We use no‑code accessibility tools, train staff in sign language, and our kitchen pulses with real‑time data to reduce wait anxiety.</p>
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <section class="about-story">
+            <div class="container">
+
+                <div class="story-grid">
+
+                    <!-- Story -->
+                    <div class="story-text">
+                        <h2>More than a restaurant</h2>
+
+                        <p>
+                            KnotCraft was born from a simple belief: a meal should never be a struggle.
+                            After years in fine dining, our founder saw that many guests were overlooked.
+                        </p>
+
+                        <p>
+                            So we created a place where every table becomes a connection — a “knot” —
+                            and every guest is understood before they even speak.
+                        </p>
+
+                        <p>
+                            With accessibility tools, trained staff, and a calm, responsive kitchen flow,
+                            we design experiences that feel natural, inclusive, and human.
+                        </p>
+                    </div>
+
+                    <!-- Quote -->
+                    <aside class="story-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>
+                            “They remembered I’m deaf without me saying a word.
+                            That’s not service — that’s craft.”
+                        </p>
+                        <span>— Amina, regular guest</span>
+                    </aside>
+
                 </div>
-                <div class="story-quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>“They remembered I’m deaf without me saying a word. That’s not service — that’s craft.”</p>
-                    <span>— Amina, regular guest</span>
-                </div>
+
             </div>
-        </div>
-    </section>
+        </section>
 
-   <footer class="footer">
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><i class="fas fa-knot"></i><span>KnotCraft Eatery</span></div>
-                <p class="footer-text">© 2026 · Where every knot tells a story</p>
+
+                <div class="footer-logo">
+                    <i class="fas fa-knot"></i>
+                    <span>KnotCraft Eatery</span>
+                </div>
+
+                <p class="footer-text">
+                    © 2026 KnotCraft Eatery · Kigali, Rwanda
+                </p>
+
+                <p class="footer-tagline">
+                    Crafted with care. Served with meaning.
+                </p>
+
             </div>
         </div>
     </footer>
+
+    <!-- JS -->
     <script src="script.js"></script>
+
 </body>
 </html>

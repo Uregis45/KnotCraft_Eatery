@@ -1,207 +1,164 @@
-// ============================================
-// KNOTCRAFT EATERY - CORRECTED SCRIPT
-// No errors. Works on all pages.
-// ============================================
+// =========================
+// KNOTCRAFT CLEAN JS
+// =========================
 
-// ----- Accessibility Toggles (safe on any page) -----
-const highContrastBtn = document.getElementById('highContrastToggle');
-const dyslexiaBtn = document.getElementById('dyslexiaToggle');
-const announceBtn = document.getElementById('announceMode');
+// ---------- Helpers ----------
+const $ = (id) => document.getElementById(id);
 
-if (highContrastBtn) {
-    highContrastBtn.addEventListener('click', () => {
-        document.body.classList.toggle('high-contrast');
-        announce('High contrast mode toggled');
-    });
-}
-if (dyslexiaBtn) {
-    dyslexiaBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dyslexia');
-        announce('Dyslexia-friendly font toggled');
-    });
-}
-if (announceBtn) {
-    announceBtn.addEventListener('click', () => {
-        announce('Accessibility features available. Use contrast and font buttons.');
-    });
-}
-
-// Helper: screen reader announcement
+// ---------- Accessibility ----------
 function announce(msg) {
-    let announcer = document.getElementById('liveRegion');
-    if (!announcer) {
-        announcer = document.createElement('div');
-        announcer.id = 'liveRegion';
-        announcer.setAttribute('aria-live', 'polite');
-        announcer.style.position = 'absolute';
-        announcer.style.left = '-9999px';
-        document.body.appendChild(announcer);
-    }
-    announcer.textContent = msg;
+  let live = $("liveRegion");
+  if (!live) {
+    live = document.createElement("div");
+    live.id = "liveRegion";
+    live.setAttribute("aria-live", "polite");
+    live.style.position = "absolute";
+    live.style.left = "-9999px";
+    document.body.appendChild(live);
+  }
+  live.textContent = msg;
 }
 
-// ----- Live Kitchen Pulse (only if elements exist) -----
-const tensionFill = document.querySelector('.tension-fill');
-const tensionTextSpan = document.getElementById('tensionText');
-
-function updatePulse() {
-    if (!tensionFill || !tensionTextSpan) return; // No pulse on this page – safe exit
-    const random = Math.floor(Math.random() * 100);
-    tensionFill.style.width = random + '%';
-    if (random > 70) tensionTextSpan.innerText = 'Busy weave';
-    else if (random > 30) tensionTextSpan.innerText = 'Steady rhythm';
-    else tensionTextSpan.innerText = 'Calm knot';
-}
-
-// Only start the interval if the pulse elements actually exist on this page
-if (tensionFill && tensionTextSpan) {
-    updatePulse(); // initial call
-    setInterval(updatePulse, 8000);
-}
-
-// ----- Story‑Knots & Mood Threads (Reservation page only) -----
-const reservationForm = document.getElementById('moodReservationForm');
-
-function displayStoryKnots() {
-    const container = document.getElementById('storyKnotsList');
-    if (!container) return;
-    const stories = JSON.parse(localStorage.getItem('knotcraft_stories') || '[]');
-    if (stories.length === 0) {
-        container.innerHTML = '<div class="knot-card"><em>No story‑knots yet. Be the first to tie one.</em></div>';
-        return;
-    }
-    container.innerHTML = stories.map(s => `
-        <div class="knot-card">
-            <em>“${s.story || 'A beautiful meal worth remembering'}”</em><br>
-            <small>— ${s.name.split(' ')[0]}</small>
-        </div>
-    `).join('');
-}
-
-if (reservationForm) {
-    reservationForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('resName')?.value.trim();
-        const email = document.getElementById('resEmail')?.value.trim();
-        const date = document.getElementById('resDate')?.value;
-        const time = document.getElementById('resTime')?.value;
-        const guests = document.getElementById('resGuests')?.value;
-        const threads = [...document.querySelectorAll('input[name="thread"]:checked')].map(cb => cb.value);
-        const story = document.getElementById('storyKnot')?.value.trim() || '';
-
-        if (!name || !email || !date || !time || !guests) {
-            alert('Please fill all required fields.');
-            return;
-        }
-
-        const knot = {
-            name,
-            email,
-            date,
-            time,
-            guests,
-            threads,
-            story,
-            timestamp: new Date().toISOString()
-        };
-
-        let allKnots = JSON.parse(localStorage.getItem('knotcraft_stories') || '[]');
-        allKnots.unshift(knot);
-        localStorage.setItem('knotcraft_stories', JSON.stringify(allKnots.slice(0, 10)));
-
-        alert(`Thank you ${name}! Your knot is tied. We've saved your mood threads.`);
-        reservationForm.reset();
-        displayStoryKnots(); // refresh the wall
-    });
-
-    // Initial load of story-knots on reservation page
-    displayStoryKnots();
-}
-
-// ----- Mobile menu toggle (works on all pages) -----
-const mobileToggle = document.querySelector('.mobile-menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = mobileToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = mobileToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        });
-    });
-}
-
-// ----- Smooth scroll for internal anchor links (if any) -----
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
+$("highContrastToggle")?.addEventListener("click", () => {
+  document.body.classList.toggle("high-contrast");
+  announce("Contrast toggled");
 });
 
-// ----- Add ARIA live region to body (for announcements) -----
-if (!document.getElementById('liveRegion')) {
-    const live = document.createElement('div');
-    live.id = 'liveRegion';
-    live.setAttribute('aria-live', 'polite');
-    live.style.position = 'absolute';
-    live.style.left = '-9999px';
-    document.body.appendChild(live);
+$("dyslexiaToggle")?.addEventListener("click", () => {
+  document.body.classList.toggle("dyslexia");
+  announce("Font toggled");
+});
+
+$("announceMode")?.addEventListener("click", () => {
+  announce("Accessibility mode active");
+});
+
+// ---------- Mobile Menu ----------
+const menuToggle = $("menuToggle");
+const navLinks = $("navLinks");
+
+menuToggle?.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+
+  const icon = menuToggle.querySelector("i");
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-times");
+});
+
+// ---------- Live Pulse ----------
+const fill = document.querySelector(".tension-fill");
+const text = $("tensionText");
+
+function pulse() {
+  if (!fill || !text) return;
+
+  const val = Math.random() * 100;
+  fill.style.width = val + "%";
+
+  text.textContent =
+    val > 70 ? "Busy weave" :
+    val > 30 ? "Steady rhythm" :
+    "Calm knot";
 }
 
-console.log('KnotCraft Eatery — accessible & error‑free ✅');
+if (fill) {
+  pulse();
+  setInterval(pulse, 7000);
+}
 
-  // Contact form handling (specific to this page)
-        const contactForm = document.getElementById('contactMessageForm');
-        const feedbackDiv = document.getElementById('contactFormFeedback');
+// ---------- Reservation ----------
+const form = $("moodReservationForm");
 
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = document.getElementById('contactName').value.trim();
-                const email = document.getElementById('contactEmail').value.trim();
-                const subject = document.getElementById('contactSubject').value.trim();
-                const message = document.getElementById('contactMessage').value.trim();
+function loadStories() {
+  const box = $("storyKnotsList");
+  if (!box) return;
 
-                if (!name || !email || !message) {
-                    feedbackDiv.innerHTML = '<span class="error">❌ Please fill all required fields.</span>';
-                    return;
-                }
-                // Simple email validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    feedbackDiv.innerHTML = '<span class="error">❌ Please enter a valid email address.</span>';
-                    return;
-                }
+  const data = JSON.parse(localStorage.getItem("knot_stories") || "[]");
 
-                // Store message in localStorage (demo) – in real app send to server
-                const messages = JSON.parse(localStorage.getItem('knotcraft_contact') || '[]');
-                messages.push({ name, email, subject, message, date: new Date().toISOString() });
-                localStorage.setItem('knotcraft_contact', JSON.stringify(messages));
+  box.innerHTML = data.length
+    ? data.map(s => `
+        <div class="knot-card">
+          <p>“${s.story || "Memory saved"}”</p>
+          <small>${s.name.split(" ")[0]}</small>
+        </div>
+      `).join("")
+    : "<p>No story-knots yet.</p>";
+}
 
-                feedbackDiv.innerHTML = '<span class="success">✅ Thank you! Your thread has been sent. We’ll reply soon.</span>';
-                contactForm.reset();
-                setTimeout(() => { feedbackDiv.innerHTML = ''; }, 5000);
-            });
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: $("resName").value,
+    email: $("resEmail").value,
+    date: $("resDate").value,
+    time: $("resTime").value,
+    guests: $("resGuests").value,
+    story: $("storyKnot").value,
+    timeStamp: Date.now()
+  };
+
+  if (!data.name || !data.email) {
+    alert("Fill required fields");
+    return;
+  }
+
+  const saved = JSON.parse(localStorage.getItem("knot_stories") || "[]");
+  saved.unshift(data);
+
+  localStorage.setItem("knot_stories", JSON.stringify(saved.slice(0, 10)));
+
+  form.reset();
+  loadStories();
+});
+
+loadStories();
+
+// ---------- Contact ----------
+const contact = $("contactMessageForm");
+
+contact?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const msg = {
+    name: $("contactName").value,
+    email: $("contactEmail").value,
+    message: $("contactMessage").value
+  };
+
+  if (!msg.name || !msg.email || !msg.message) return;
+
+  const saved = JSON.parse(localStorage.getItem("knot_contact") || "[]");
+  saved.push(msg);
+
+  localStorage.setItem("knot_contact", JSON.stringify(saved));
+
+  alert("Message sent ✔");
+  contact.reset();
+});
+
+// ---------- ACTIVE NAVIGATION AUTO SYSTEM ----------
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll(".nav-link").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+    }
+});
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        if (navLinks.classList.contains("active")) {
+            icon.classList.replace("fa-bars", "fa-times");
+        } else {
+            icon.classList.replace("fa-times", "fa-bars");
         }
+    });
+}

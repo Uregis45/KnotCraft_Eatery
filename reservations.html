@@ -2,94 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserve a Knot · KnotCraft Eatery</title>
+
+    <title>KnotCraft Eatery · Reservations</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="accessibility-hub">...</div>
-      <div class="accessibility-hub" id="accessibilityHub">
-        <button id="highContrastToggle" aria-label="High contrast mode">🌓 Contrast</button>
-        <button id="dyslexiaToggle" aria-label="Dyslexia friendly font">📖 Dyslexia</button>
-        <button id="announceMode" aria-label="Screen reader friendly announcements">🔊 Announce</button>
+
+<!-- Accessibility -->
+<div class="accessibility-hub" id="accessibilityHub">
+    <button id="highContrastToggle">🌓 Contrast</button>
+    <button id="dyslexiaToggle">📖 Dyslexia</button>
+    <button id="announceMode">🔊 Announce</button>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+
+    <div class="logo">
+      <i class="fas fa-knot"></i>
+      <span class="logo-text">KnotCraft Eatery</span>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-knot"></i>
-                <span class="logo-text">KnotCraft Eatery</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">Our Knot</a></li>
+      <li><a href="menu.html" class="nav-link">Menu</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="reservations.html" class="nav-link">Reserve</a></li>
+    </ul>
+
+    <div class="mobile-menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="reservation-hero">
+    <div class="container">
+        <h1>Reserve Your Knot</h1>
+        <p>Tell us your threads — we’ll remember them forever.</p>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="reservation-form-wrapper">
+
+<div class="container">
+
+    <div class="reservation-grid">
+
+        <!-- FORM -->
+        <form id="moodReservationForm">
+
+            <div class="form-group">
+                <label for="resName">Full Name *</label>
+                <input type="text" id="resName" required>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">Our Knot</a></li>
-                <li><a href="menu.html" class="nav-link">Menu</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="reservations.html" class="nav-link">Reserve</a></li>
-            </ul>
-            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
 
-    <section class="reservation-hero">
-        <div class="container">
-            <h1>Reserve Your Knot</h1>
-            <p>Tell us your threads — we’ll remember them forever.</p>
-        </div>
-    </section>
+            <div class="form-group">
+                <label for="resEmail">Email *</label>
+                <input type="email" id="resEmail" required>
+            </div>
 
-    <section class="reservation-form-wrapper">
-        <div class="container">
-            <div class="reservation-grid">
-                <!-- standard form fields -->
-                <form id="moodReservationForm">
-                    <div class="form-group"><label>Full name</label><input type="text" id="resName" required></div>
-                    <div class="form-group"><label>Email</label><input type="email" id="resEmail" required></div>
-                    <div class="form-group"><label>Date</label><input type="date" id="resDate" required></div>
-                    <div class="form-group"><label>Time</label><select id="resTime">...</select></div>
-                    <div class="form-group"><label>Guests</label><select id="resGuests">...</select></div>
+            <div class="form-group">
+                <label for="resDate">Date *</label>
+                <input type="date" id="resDate" required>
+            </div>
 
-                    <!-- UNIQUE: MOOD THREADS (accessibility needs) -->
-                    <div class="form-group full-width">
-                        <label>Mood Threads (select any that apply)</label>
-                        <div class="thread-checkboxes">
-                            <label><input type="checkbox" name="thread" value="hearing"> 🔵 Hearing impairment</label>
-                            <label><input type="checkbox" name="thread" value="anxiety"> 🟢 Anxiety / sensory sensitivity</label>
-                            <label><input type="checkbox" name="thread" value="mobility"> 🟠 Mobility aid / wheelchair</label>
-                            <label><input type="checkbox" name="thread" value="allergy"> 🔴 Severe allergy (we’ll call you)</label>
-                        </div>
-                    </div>
+            <div class="form-group">
+                <label for="resTime">Time *</label>
+                <select id="resTime" required>
+                    <option value="">Select time</option>
+                    <option>11:00 AM</option>
+                    <option>12:00 PM</option>
+                    <option>2:00 PM</option>
+                    <option>6:00 PM</option>
+                    <option>8:00 PM</option>
+                </select>
+            </div>
 
-                    <!-- UNIQUE: GUEST STORY‑KNOT (sensory memory) -->
-                    <div class="form-group full-width">
-                        <label>Leave a Story‑Knot (optional)</label>
-                        <textarea id="storyKnot" rows="2" placeholder="Example: ‘The crackle of the charcoal fire’ or ‘My daughter’s laugh when the dessert arrived’"></textarea>
-                        <small>We save these. Next time you visit, your knot will be waiting.</small>
-                    </div>
+            <div class="form-group">
+                <label for="resGuests">Guests *</label>
+                <select id="resGuests" required>
+                    <option value="">Select guests</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5+</option>
+                </select>
+            </div>
 
-                    <button type="submit" class="submit-btn">Weave my reservation →</button>
-                </form>
+            <!-- MOOD THREADS -->
+            <div class="form-group full-width">
+                <label>Mood Threads (optional)</label>
 
-                <!-- Sidebar: recent story-knots from other guests (anonymized) -->
-                <div class="knot-wall">
-                    <h3>Recent Guest Knots</h3>
-                    <div id="storyKnotsList">
-                        <!-- loaded from localStorage -->
-                    </div>
+                <div class="thread-checkboxes">
+
+                    <label><input type="checkbox" name="thread" value="hearing"> Hearing support</label>
+                    <label><input type="checkbox" name="thread" value="anxiety"> Sensory comfort</label>
+                    <label><input type="checkbox" name="thread" value="mobility"> Mobility access</label>
+                    <label><input type="checkbox" name="thread" value="allergy"> Allergy care</label>
+
                 </div>
             </div>
-        </div>
-    </section>
 
-<footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo"><i class="fas fa-knot"></i><span>KnotCraft Eatery</span></div>
-                <p class="footer-text">© 2026 · Where every knot tells a story</p>
+            <!-- STORY KNOT -->
+            <div class="form-group full-width">
+                <label for="storyKnot">Leave a Story-Knot (optional)</label>
+                <textarea id="storyKnot" rows="3"
+                placeholder="Example: The sound of sizzling food or a memory you want us to keep"></textarea>
+
+                <small>We store this to personalize your next visit.</small>
             </div>
+
+            <button type="submit" class="submit-btn">
+                Weave My Reservation →
+            </button>
+
+        </form>
+
+        <!-- SIDE WALL -->
+        <aside class="knot-wall">
+
+            <h3>Recent Guest Knots</h3>
+
+            <div id="storyKnotsList">
+                <p style="color:#9ca3af;">Loading community stories...</p>
+            </div>
+
+        </aside>
+
+    </div>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <i class="fas fa-knot"></i>
+                <span>KnotCraft Eatery</span>
+            </div>
+
+            <p class="footer-text">
+                © 2026 · Where every knot tells a story
+            </p>
+
         </div>
-    </footer>
-    <script src="script.js"></script>
+
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
